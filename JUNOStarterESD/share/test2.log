@@ -1,0 +1,393 @@
+nohup: ignoring input
+Setup Official junosw (CMake version)
+**************************************************
+Welcome to SNiPER v2.1.0
+Running @ user-Super-Server on Mon Mar 31 11:43:27 2025
+**************************************************
+{
+  "sniper": {
+    "LoadDlls": [ "libBufferMemMgr.so", "libGeometry.so", "libRootIOTools.so", "libEDMUtil.so", "libGenEvent.so", "libSimEvent.so", "libCalibEvent.so", "libRecEvent.so", "libElecEvent.so", "libEvtNavigator.so", "libRootIOSvc.so", "libRootWriterLib.so", "libSniperProfilingLib.so", "libJUNOStarterESD.so", "libPMTCalibSvc.so", "libCondDB.so", "libDBISvc.so", "libDeconvolution.so" ],
+    "LogLevel": 3
+  },
+  "identifier": "Task/TopTask/junotoptask",
+  "properties": {
+    "EvtMax": 100,
+    "LogLevel": 3
+  },
+  "services": [
+    {
+      "identifier": "SniperProfiling/SniperProfiling",
+      "properties": {
+        "SaveDetails": false
+      }
+    },
+    {
+      "identifier": "BufferMemMgr/BufferMemMgr",
+      "properties": {
+        "StopTaskOpt": 0,
+        "TimeWindow": [ -0.1, 0.1 ]
+      }
+    },
+    {
+      "identifier": "RootInputSvc/InputSvc",
+      "properties": {
+        "InputCorrelationFile": [],
+        "InputFile": [ "root://junoeos01.ihep.ac.cn//eos/juno/groups/Reconstruction/dingxf/Realdata_rec/run_3677/rtraw2rec/soft_trigger/Run3677_rtraw_soft_trigger_100_J25.1.5.root" ]
+      }
+    },
+    {
+      "identifier": "RootWriter/RootWriter",
+      "properties": {
+        "Output": { "USER_OUTPUT": "test2.root" }
+      }
+    },
+    {
+      "identifier": "PMTParamSvc/PMTParamSvc",
+      "properties": {
+        "Construct_Center_PMTID": -1,
+        "DBType": "File",
+        "Distance_To_Center_PMT": -1,
+        "Path_CD_LPMT_Pos": "",
+        "Path_CD_LPMT_Type": "",
+        "Path_CD_SPMT_Pos": "",
+        "Path_CD_SPMT_Type": "",
+        "Path_WP_LPMT_Pos": "",
+        "Path_WP_LPMT_Type": "",
+        "Ranges_PMT_Constructed": [],
+        "Ranges_PMT_Enabled": []
+      }
+    }
+  ],
+  "algorithms": [
+    {
+      "identifier": "JUNOStarterESD/JUNOStarterESD",
+      "properties": {
+        "bias": 0,
+        "bkg_filter": false,
+        "coin_select": false,
+        "correlate_rtraw": false,
+        "flasher_ide": false,
+        "muon_track_file": "/datafs/users/wujxy/waterphase_analysis/realdata_analysis/cosmo_water/3677_gl_muon_rec.root",
+        "muon_track_veto": true,
+        "muon_veto": true,
+        "muon_veto_post": 300000,
+        "muon_veto_pre": 25000,
+        "mutiplicity_cut": true,
+        "rec_file": true
+      }
+    }
+  ]
+}
+TopTask/junotoptask:SniperProfiling.initialize  INFO: 
+TopTask/junotoptask.find        WARN: Cann't find Object OutputSvc
+TopTask/junotoptask:InputSvc.initialize  INFO: Initialize RootInputSvc...
+TLS: Unable to create TLS context; invalid certificate.
+TLS: 4006806C78740000:error:0A00018F:SSL routines:SSL_CTX_use_certificate:ee key too small:ssl/ssl_rsa.c:221:
+
+Plugin version SecClnt v5.6.9 is incompatible with seckrb5 v5.7.0 (must be <= 5.6.x) in sec.protocol libXrdSeckrb5-5.so
+TopTask/junotoptask:InputSvc.initialize  INFO: RootInputSvc successfully initialized.
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_SPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_WP_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_PMT_R  INFO: CD LPMT Mean R: 19433.9 mm	CD SPMT Mean R: 19384 mm
+TopTask/junotoptask:PMTParamSvc.init_PMT_R  INFO: CD LPMT Mean R: 19433.9 mm (unshifted)	CD SPMT Mean R: 19384 mm  (unshifted)
+TopTask/junotoptask:PMTParamSvc.init_file_PMTType  INFO: Loading PMT category from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTType  INFO: Loading PMT category from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_SPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file  INFO: CD LPMT Num: 17612	CD SPMT Num: 25600	WP LPMT Num: 2400
+{
+  "sniper": {
+    "LoadDlls": [ "libBufferMemMgr.so", "libGeometry.so", "libRootIOTools.so", "libEDMUtil.so", "libGenEvent.so", "libSimEvent.so", "libCalibEvent.so", "libRecEvent.so", "libElecEvent.so", "libEvtNavigator.so", "libRootIOSvc.so", "libRootWriterLib.so", "libSniperProfilingLib.so", "libJUNOStarterESD.so", "libPMTCalibSvc.so", "libCondDB.so", "libDBISvc.so", "libDeconvolution.so" ],
+    "LogLevel": 3
+  },
+  "identifier": "Task/TopTask/junotoptask",
+  "properties": {
+    "EvtMax": 100,
+    "LogLevel": 3
+  },
+  "services": [
+    {
+      "identifier": "SniperProfiling/SniperProfiling",
+      "properties": {
+        "SaveDetails": false
+      }
+    },
+    {
+      "identifier": "BufferMemMgr/BufferMemMgr",
+      "properties": {
+        "StopTaskOpt": 0,
+        "TimeWindow": [ -0.1, 0.1 ]
+      }
+    },
+    {
+      "identifier": "RootInputSvc/InputSvc",
+      "properties": {
+        "InputCorrelationFile": [],
+        "InputFile": [ "root://junoeos01.ihep.ac.cn//eos/juno/groups/Reconstruction/dingxf/Realdata_rec/run_3677/rtraw2rec/soft_trigger/Run3677_rtraw_soft_trigger_100_J25.1.5.root" ]
+      }
+    },
+    {
+      "identifier": "RootWriter/RootWriter",
+      "properties": {
+        "Output": { "USER_OUTPUT": "test2.root" }
+      }
+    },
+    {
+      "identifier": "PMTParamSvc/PMTParamSvc",
+      "properties": {
+        "Construct_Center_PMTID": -1,
+        "DBType": "File",
+        "Distance_To_Center_PMT": -1,
+        "Path_CD_LPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_LPMT.csv",
+        "Path_CD_LPMT_Type": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_LPMT.csv",
+        "Path_CD_SPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_SPMT.csv",
+        "Path_CD_SPMT_Type": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_SPMT.csv",
+        "Path_WP_LPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_WP_LPMT.csv",
+        "Path_WP_LPMT_Type": "",
+        "Ranges_PMT_Constructed": [],
+        "Ranges_PMT_Enabled": []
+      }
+    }
+  ],
+  "algorithms": [
+    {
+      "identifier": "JUNOStarterESD/JUNOStarterESD",
+      "properties": {
+        "bias": 0,
+        "bkg_filter": false,
+        "coin_select": false,
+        "correlate_rtraw": false,
+        "flasher_ide": false,
+        "muon_track_file": "/datafs/users/wujxy/waterphase_analysis/realdata_analysis/cosmo_water/3677_gl_muon_rec.root",
+        "muon_track_veto": true,
+        "muon_veto": true,
+        "muon_veto_post": 300000,
+        "muon_veto_pre": 25000,
+        "mutiplicity_cut": true,
+        "rec_file": true
+      }
+    }
+  ]
+}
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Open muon track file
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Loading muon track info
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Muon track number: 56877
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: First muon track info: 1738955378409603136
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: firt gl_fet_high16: 1738952406118432768
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Loaded muon track info
+TopTask/junotoptask.initialize  INFO: initialized
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 0
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623544140062
+IDMapping Service is initializing!
+have initialized the IDService!
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623544140062
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623544168718
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623544168718
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623544572036
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623544572036
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623544756369
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623544756369
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623545648503
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623545648503
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623545813730
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623545813730
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623546137243
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623546137243
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623546352481
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623546352481
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623547859678
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623547859678
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623552806406
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623552806406
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623553700245
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623553700245
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623554726058
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623554726058
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623554877283
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623554877283
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623556153434
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623556153434
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623558419721
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623558419721
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623559292236
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623559292236
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623559648986
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623559648986
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623560244264
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623560244264
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623560258253
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623560258253
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623560479649
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623560479649
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623560965579
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623560965579
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623562821358
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623562821358
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623562984858
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623562984858
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623566856572
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623566856572
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623568774347
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623568774347
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623568862918
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623568862918
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623570629821
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623570629821
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623570670282
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623570670282
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623571556347
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623571556347
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623574366072
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623574366072
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623574598112
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623574598112
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623576878460
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623576878460
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623577322447
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623577322447
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623578614415
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623578614415
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623581367230
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623581367230
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623581413365
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623581413365
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623583018712
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623583018712
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623585656538
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623585656538
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623585740870
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623585740870
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623586112593
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623586112593
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623586474620
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623586474620
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623589001620
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623589001620
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623589179725
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623589179725
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623589485458
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623589485458
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623590549649
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623590549649
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623590860938
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623590860938
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623591339538
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623591339538
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623592120251
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623592120251
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623592458014
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623592458014
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623593476137
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623593476137
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623593787704
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623593787704
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623594408725
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623594408725
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623594752989
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623594752989
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623595833372
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623595833372
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623597241319
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623597241319
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623597584739
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623597584739
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623598243694
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623598243694
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623599105569
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623599105569
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623600531904
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623600531904
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623600916899
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623600916899
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623603394628
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623603394628
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623603442123
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623603442123
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623604738265
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623604738265
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623604815923
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623604815923
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623605422532
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623605422532
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623605498282
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623605498282
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623605599476
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623605599476
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623606446635
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623606446635
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623607620822
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623607620822
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623609601625
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623609601625
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623609892711
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623609892711
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623610413776
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623610413776
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623611139849
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623611139849
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623611739309
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623611739309
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623612679527
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623612679527
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623612945294
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623612945294
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623613699257
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623613699257
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623613771548
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623613771548
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623613862486
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623613862486
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623615446226
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623615446226
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623617986609
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623617986609
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623618245258
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623618245258
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623618922689
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623618922689
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623619729779
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623619729779
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623620138619
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623620138619
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623621288012
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623621288012
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623621715497
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623621715497
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623623152625
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623623152625
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623623628784
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623623628784
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623623754724
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623623754724
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623624900486
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623624900486
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623625501178
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623625501178
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623627368608
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623627368608
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623627602485
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623627602485
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623627805156
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623627805156
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623628709641
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623628709641
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623628858364
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623628858364
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623629033057
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623629033057
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623629641298
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_pre: 13623629641298
+TopTask/junotoptask:JUNOStarterESD.execute  INFO: t_ref: 13623631456130
+TopTask/junotoptask:InputSvc.finalize  INFO: Finalizing RootInputSvc...
+TopTask/junotoptask:InputSvc.finalize  INFO: RootInputSvc sucessfully finalized
+############################## SniperProfiling ##############################
+Name                     Count       Total(ms)      Mean(ms)     RMS(ms)      
+JUNOStarterESD           100         542.28600      5.42286      27.56171     
+Sum of TopTask/junotoptask100         649.50500      6.49505      37.74452     
+#############################################################################
+TopTask/junotoptask:SniperProfiling.finalize  INFO: finalized successfully
+TopTask/junotoptask.finalize    INFO: events processed 100
+
+**************************************************
+Terminating @ user-Super-Server on Mon Mar 31 11:43:29 2025
+SNiPER::Context Running Mode = { BASIC }
+SNiPER::Context Terminated Successfully

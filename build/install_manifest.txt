@@ -1,0 +1,6 @@
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/lib64/libJUNOStarter.so
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/python/JUNOStarter/__init__.py
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/lib64/libJUNOStarterESD.so
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/python/JUNOStarterESD/__init__.py
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/setup.sh
+/datafs/users/wujxy/waterphase_analysis/realdata_analysis/juno_analysis/juno-starter/InstallArea/setup.csh

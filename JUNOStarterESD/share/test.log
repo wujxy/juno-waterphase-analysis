@@ -1,0 +1,196 @@
+nohup: ignoring input
+Setup Official junosw (CMake version)
+**************************************************
+Welcome to SNiPER v2.1.0
+Running @ user-Super-Server on Tue Apr 15 16:02:16 2025
+**************************************************
+{
+  "sniper": {
+    "LoadDlls": [ "libBufferMemMgr.so", "libGeometry.so", "libRootIOTools.so", "libEDMUtil.so", "libGenEvent.so", "libSimEvent.so", "libCalibEvent.so", "libRecEvent.so", "libElecEvent.so", "libEvtNavigator.so", "libRootIOSvc.so", "libRootWriterLib.so", "libSniperProfilingLib.so", "libJUNOStarterESD.so", "libPMTCalibSvc.so", "libCondDB.so", "libDBISvc.so", "libDeconvolution.so" ],
+    "LogLevel": 3
+  },
+  "identifier": "Task/TopTask/junotoptask",
+  "properties": {
+    "EvtMax": -1,
+    "LogLevel": 3
+  },
+  "services": [
+    {
+      "identifier": "SniperProfiling/SniperProfiling",
+      "properties": {
+        "SaveDetails": false
+      }
+    },
+    {
+      "identifier": "BufferMemMgr/BufferMemMgr",
+      "properties": {
+        "StopTaskOpt": 0,
+        "TimeWindow": [ -5, 5 ]
+      }
+    },
+    {
+      "identifier": "RootInputSvc/InputSvc",
+      "properties": {
+        "InputCorrelationFile": [],
+        "InputFile": [ "root://junoeos01.ihep.ac.cn//eos/juno/groups/Reconstruction/dingxf/Realdata_rec/run_3872/rtraw2rec/soft_trigger/Run3872_rtraw_soft_trigger_001_J25.1.5.root" ]
+      }
+    },
+    {
+      "identifier": "RootWriter/RootWriter",
+      "properties": {
+        "Output": { "USER_OUTPUT": "test.root" }
+      }
+    },
+    {
+      "identifier": "PMTParamSvc/PMTParamSvc",
+      "properties": {
+        "Construct_Center_PMTID": -1,
+        "DBType": "File",
+        "Distance_To_Center_PMT": -1,
+        "Path_CD_LPMT_Pos": "",
+        "Path_CD_LPMT_Type": "",
+        "Path_CD_SPMT_Pos": "",
+        "Path_CD_SPMT_Type": "",
+        "Path_WP_LPMT_Pos": "",
+        "Path_WP_LPMT_Type": "",
+        "Ranges_PMT_Constructed": [],
+        "Ranges_PMT_Enabled": []
+      }
+    }
+  ],
+  "algorithms": [
+    {
+      "identifier": "JUNOStarterESD/JUNOStarterESD",
+      "properties": {
+        "bias": 0,
+        "bkg_filter": true,
+        "coin_select": false,
+        "correlate_rtraw": false,
+        "flasher_ide": false,
+        "muon_track_file": "/datafs/users/wujxy/waterphase_analysis/realdata_analysis/cosmo_water/gl_muon_track/merged_3872.root",
+        "muon_track_veto": true,
+        "muon_veto": true,
+        "muon_veto_post": 300000,
+        "muon_veto_pre": 25000,
+        "mutiplicity_cut": true,
+        "rec_file": true,
+        "save_muon": true,
+        "save_track_veto": true
+      }
+    }
+  ]
+}
+TopTask/junotoptask:SniperProfiling.initialize  INFO: 
+TopTask/junotoptask.find        WARN: Cann't find Object OutputSvc
+TopTask/junotoptask:InputSvc.initialize  INFO: Initialize RootInputSvc...
+TLS: Unable to create TLS context; invalid certificate.
+TLS: 40068043B7720000:error:0A00018F:SSL routines:SSL_CTX_use_certificate:ee key too small:ssl/ssl_rsa.c:221:
+
+Plugin version SecClnt v5.6.9 is incompatible with seckrb5 v5.7.0 (must be <= 5.6.x) in sec.protocol libXrdSeckrb5-5.so
+TopTask/junotoptask:InputSvc.initialize  INFO: RootInputSvc successfully initialized.
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_SPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTPos  INFO: Loading PMT pos from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_WP_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_PMT_R  INFO: CD LPMT Mean R: 19433.9 mm	CD SPMT Mean R: 19384 mm
+TopTask/junotoptask:PMTParamSvc.init_PMT_R  INFO: CD LPMT Mean R: 19433.9 mm (unshifted)	CD SPMT Mean R: 19384 mm  (unshifted)
+TopTask/junotoptask:PMTParamSvc.init_file_PMTType  INFO: Loading PMT category from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_LPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file_PMTType  INFO: Loading PMT category from file: /cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_SPMT.csv
+TopTask/junotoptask:PMTParamSvc.init_file  INFO: CD LPMT Num: 17612	CD SPMT Num: 25600	WP LPMT Num: 2400
+{
+  "sniper": {
+    "LoadDlls": [ "libBufferMemMgr.so", "libGeometry.so", "libRootIOTools.so", "libEDMUtil.so", "libGenEvent.so", "libSimEvent.so", "libCalibEvent.so", "libRecEvent.so", "libElecEvent.so", "libEvtNavigator.so", "libRootIOSvc.so", "libRootWriterLib.so", "libSniperProfilingLib.so", "libJUNOStarterESD.so", "libPMTCalibSvc.so", "libCondDB.so", "libDBISvc.so", "libDeconvolution.so" ],
+    "LogLevel": 3
+  },
+  "identifier": "Task/TopTask/junotoptask",
+  "properties": {
+    "EvtMax": -1,
+    "LogLevel": 3
+  },
+  "services": [
+    {
+      "identifier": "SniperProfiling/SniperProfiling",
+      "properties": {
+        "SaveDetails": false
+      }
+    },
+    {
+      "identifier": "BufferMemMgr/BufferMemMgr",
+      "properties": {
+        "StopTaskOpt": 0,
+        "TimeWindow": [ -5, 5 ]
+      }
+    },
+    {
+      "identifier": "RootInputSvc/InputSvc",
+      "properties": {
+        "InputCorrelationFile": [],
+        "InputFile": [ "root://junoeos01.ihep.ac.cn//eos/juno/groups/Reconstruction/dingxf/Realdata_rec/run_3872/rtraw2rec/soft_trigger/Run3872_rtraw_soft_trigger_001_J25.1.5.root" ]
+      }
+    },
+    {
+      "identifier": "RootWriter/RootWriter",
+      "properties": {
+        "Output": { "USER_OUTPUT": "test.root" }
+      }
+    },
+    {
+      "identifier": "PMTParamSvc/PMTParamSvc",
+      "properties": {
+        "Construct_Center_PMTID": -1,
+        "DBType": "File",
+        "Distance_To_Center_PMT": -1,
+        "Path_CD_LPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_LPMT.csv",
+        "Path_CD_LPMT_Type": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_LPMT.csv",
+        "Path_CD_SPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_CD_SPMT.csv",
+        "Path_CD_SPMT_Type": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTType_CD_SPMT.csv",
+        "Path_WP_LPMT_Pos": "/cvmfs/juno.ihep.ac.cn/el9_amd64_gcc11/Release/J25.2.0/dbdata/offline-data/Detector/Geometry/PMTPos_WP_LPMT.csv",
+        "Path_WP_LPMT_Type": "",
+        "Ranges_PMT_Constructed": [],
+        "Ranges_PMT_Enabled": []
+      }
+    }
+  ],
+  "algorithms": [
+    {
+      "identifier": "JUNOStarterESD/JUNOStarterESD",
+      "properties": {
+        "bias": 0,
+        "bkg_filter": true,
+        "coin_select": false,
+        "correlate_rtraw": false,
+        "flasher_ide": false,
+        "muon_track_file": "/datafs/users/wujxy/waterphase_analysis/realdata_analysis/cosmo_water/gl_muon_track/merged_3872.root",
+        "muon_track_veto": true,
+        "muon_veto": true,
+        "muon_veto_post": 300000,
+        "muon_veto_pre": 25000,
+        "mutiplicity_cut": true,
+        "rec_file": true,
+        "save_muon": true,
+        "save_track_veto": true
+      }
+    }
+  ]
+}
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Open muon track file
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Loading muon track info
+TopTask/junotoptask:JUNOStarterESD.LoadMuonTrack  INFO: Muon track number: 97178
+TopTask/junotoptask.initialize  INFO: initialized
+Plugin version SecClnt v5.6.9 is incompatible with seckrb5 v5.7.0 (must be <= 5.6.x) in sec.protocol libXrdSeckrb5-5.so
+IDMapping Service is initializing!
+have initialized the IDService!
+TopTask/junotoptask.execute     INFO: stop run promtly.
+TopTask/junotoptask:InputSvc.finalize  INFO: Finalizing RootInputSvc...
+TopTask/junotoptask:InputSvc.finalize  INFO: RootInputSvc sucessfully finalized
+############################## SniperProfiling ##############################
+Name                     Count       Total(ms)      Mean(ms)     RMS(ms)      
+JUNOStarterESD           255846      1165528.57492  4.55559      4.85604      
+Sum of TopTask/junotoptask255846      1189067.90489  4.64759      10.70707     
+#############################################################################
+TopTask/junotoptask:SniperProfiling.finalize  INFO: finalized successfully
+TopTask/junotoptask.finalize    INFO: events processed 255846
+
+**************************************************
+Terminating @ user-Super-Server on Tue Apr 15 16:22:08 2025
+SNiPER::Context Running Mode = { BASIC }
+SNiPER::Context Terminated Successfully

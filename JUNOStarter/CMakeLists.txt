@@ -1,0 +1,11 @@
+PKG(JUNOStarter
+    MODULE
+    DEPENDS
+    EvtNavigator
+    BufferMemMgrLib
+    SNiPER::RootWriterLib
+    GeometryLib
+    CalibEvent
+    ElecEvent
+    RecEvent
+)
